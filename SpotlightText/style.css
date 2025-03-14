@@ -45,6 +45,87 @@ body {
   -webkit-text-fill-color: rgba(255, 255, 255, 0);
 }
 
+.pulsing-glow {
+  text-align: center;
+  margin: 0;
+  position: relative;
+  font-family: fantasy;
+  font-size: 30px;
+  letter-spacing: 1px;
+  color: #0ff;
+  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #00ffff;
+  animation: pulse 0.5s infinite alternate;
+}
+
+.glitch {
+  text-align: center;
+  margin: 0;
+  font-size: 50px;
+  font-family: cursive;
+  color: rgb(187, 218, 240);
+  position: relative;
+  animation: jitter 1s infinite alternate;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  width: 100%;
+  opacity: 0.8;
+  mix-blend-mode: screen; 
+}
+
+.glitch::before {
+  left: 3px;
+  top: -1px;
+  transform: skewX(-10deg);
+  text-shadow: 3px 0 rgb(227, 246, 164);
+  animation: glitch 0.8s infinite linear alternate-reverse, flicker 1.2s infinite alternate;
+}
+
+.glitch::after {
+  left: -3px;
+  top: 1px;
+  transform: skewX(10deg);
+  text-shadow: 3px 0 cyan;
+  animation: glitch 1s infinite linear alternate, flicker 1.5s infinite alternate-reverse;
+}
+
+@keyframes jitter {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-1px, 1px); }
+  50% { transform: translate(1px, -1px); }
+  75% { transform: translate(-1px, -1px); }
+  100% { transform: translate(1px, 1px); }
+}
+
+@keyframes glitch {
+  0% { clip-path: inset(5% 0 90% 0); }
+  25% { clip-path: inset(40% 0 50% 0); }
+  50% { clip-path: inset(20% 0 70% 0); }
+  75% { clip-path: inset(60% 0 30% 0); }
+  100% { clip-path: inset(90% 0 5% 0); }
+}
+
+@keyframes flicker {
+  0% { opacity: 0.8; }
+  20% { opacity: 0.1; }
+  40% { opacity: 1; }
+  60% { opacity: 0.3; }
+  80% { opacity: 0.9; }
+  100% { opacity: 0.7; }
+}
+
+@keyframes pulse {
+  0% {
+    text-shadow: 0 0 20px #0ff, 0 0 30px #0ff, 0 0 30px #00ffff;
+  }
+  100% {
+    text-shadow: 0 0 50px #0ff, 0 0 60px #00ffff, 0 0 180px #00ffff;
+  }
+}
+
 @keyframes animate {
   0% {
     background-position: -500%;
