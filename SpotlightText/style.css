@@ -1,0 +1,40 @@
+body {
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.shining-text {
+  text-align: center;
+  margin: 0;
+  position: relative;
+  font-size: 60px;
+  font-family: 'Times New Roman', Times, serif;
+  letter-spacing: 4px;
+  text-shadow: 0 0 30px rgba(127, 125, 127, 0.967); 
+  overflow: hidden;
+  background: linear-gradient(90deg, #000, #ffffff, #000);
+  background-repeat: no-repeat;
+  background-size: 70% auto;
+  animation: animate 10s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+@keyframes animate {
+  0% {
+    background-position: -500%;
+  }
+
+  50% {
+    background-position: 500%;
+  }
+
+  100% {
+    background-position: -600%;
+  }
+}
+
+/* this is for black bg and white text with light contrast */
