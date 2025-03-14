@@ -6,6 +6,28 @@ body {
   overflow: hidden;
 }
 
+.neon-text {
+  text-align: center;
+  margin: 0;
+  position: relative;
+  font-family: monospace;
+  font-size: 40px;
+  letter-spacing: 1px;
+  color: #0ff;
+  text-shadow: 0 0 30px #0ff, 0 0 30px #0ff, 0 0 20px #00ffff, 0 0 10px #00ffff;
+}
+
+.hover-effect {
+  font-weight: lighter;
+  transition: 0.5s ease-in-out;
+}
+
+.hover-effect:hover {
+  color: rgba(0, 255, 255, 0.888);
+  transform: scale(0.9);
+  text-shadow: 0 0 30px #0ff, 0 0 30px #0ff, 0 0 20px #00ffff, 0 0 10px #00ffff;
+}
+
 .shining-text {
   text-align: center;
   margin: 0;
@@ -36,5 +58,3 @@ body {
     background-position: -600%;
   }
 }
-
-/* this is for black bg and white text with light contrast */
