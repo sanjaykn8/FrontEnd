@@ -1,0 +1,52 @@
+body {
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.typewriter-text {
+  border-right: solid 2px rgba(216, 252, 216, 0.75);
+  white-space: nowrap;
+  overflow: hidden;
+  font-family: monospace;
+  font-size: 18px;
+  color: #fff;
+}
+
+/*Fixed Length*/
+.typewriter-text {
+  animation: animated-text 5s steps(28, end) 1s 1 normal both,
+    animated-cursor 700ms steps(28, end) infinite;            
+}
+
+/* Remove neon for normal text effect */
+
+.neon-text {
+    color: rgb(232, 239, 239);
+    text-shadow: 0 0 30px rgb(170, 205, 205), 0 0 30px rgb(155, 187, 187), 0 0 20px #8abbbb, 0 0 10px #8cb8b8; /*change color here*/
+  }
+
+@keyframes animated-text {
+  from {
+    width: 0;
+  }
+  to {
+    width: 270px;
+  }
+}
+
+@keyframes animated-cursor {
+  from {
+    border-right-color: rgba(209, 237, 209, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
