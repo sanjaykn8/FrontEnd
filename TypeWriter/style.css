@@ -3,12 +3,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0;
   overflow: hidden;
 }
 
-html,
-body {
-  height: 100%;
+.animation-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .typewriter-text {
@@ -18,35 +20,18 @@ body {
   font-family: monospace;
   font-size: 18px;
   color: #fff;
+  width: 0;
+  text-shadow:  0 0 40px rgb(170, 205, 205), 0 0 40px #8abbbb, 0 0 30px rgb(155, 187, 187), ;
+  animation: animated-text 5s steps(32, end) 1s forwards,
+             animated-cursor 700ms steps(30, end) infinite;
 }
-
-/*Fixed Length*/
-.typewriter-text {
-  animation: animated-text 5s steps(28, end) 1s 1 normal both,
-    animated-cursor 700ms steps(28, end) infinite;            
-}
-
-/* Remove neon for normal text effect */
-
-.neon-text {
-    color: rgb(232, 239, 239);
-    text-shadow: 0 0 30px rgb(170, 205, 205), 0 0 30px rgb(155, 187, 187), 0 0 20px #8abbbb, 0 0 10px #8cb8b8; /*change color here*/
-  }
 
 @keyframes animated-text {
-  from {
-    width: 0;
-  }
-  to {
-    width: 270px;
-  }
+  from { width: 0; }
+  to { width: 295px; }
 }
 
 @keyframes animated-cursor {
-  from {
-    border-right-color: rgba(209, 237, 209, 0.75);
-  }
-  to {
-    border-right-color: transparent;
-  }
+  0%, 49% { border-right-color: rgba(167, 238, 108, 0.944); }
+  50%, 100% { border-right-color: transparent; }
 }
