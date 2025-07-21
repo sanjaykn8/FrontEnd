@@ -1,0 +1,25 @@
+<html>
+
+<head>
+  <title>Lines</title>
+</head>
+
+<body>
+
+  <div>
+    <h2>Drawing Lines</h2>
+    <canvas id="lineCanvas" width="300" height="200"></canvas>
+
+    <script>
+      const lineCtx = document.getElementById('lineCanvas').getContext('2d');
+      lineCtx.beginPath();
+      lineCtx.moveTo(50, 50);
+      lineCtx.lineTo(250, 150);
+      lineCtx.strokeStyle = 'red';
+      lineCtx.lineWidth = 4;
+      lineCtx.stroke();
+    </script>
+
+  </div>
+</body>
+</html>

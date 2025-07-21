@@ -1,0 +1,20 @@
+<html>
+<head><title>Transformations</title></head>
+<body>
+<div class="section">
+    <h2>Transformations</h2>
+    <canvas id="transformCanvas" width="300" height="200"></canvas>
+    <script>
+      const transCtx = document.getElementById('transformCanvas').getContext('2d');
+
+      transCtx.fillStyle = 'gray';
+      transCtx.fillRect(20, 20, 100, 60);
+
+      transCtx.translate(50, 100);
+      transCtx.rotate(Math.PI / 3); 
+      transCtx.fillStyle = 'purple';
+      transCtx.fillRect(-50, -30, 100, 60);
+    </script>
+  </div>
+  </body>
+  </html>

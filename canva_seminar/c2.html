@@ -1,0 +1,24 @@
+<html>
+
+    <head>
+        <title>Arcs & Circles</title>
+    </head>
+
+    <body>
+    <div class="section">
+
+    <h2>Arcs and Circles</h2>
+    <canvas id="circleCanvas" width="300" height="200"></canvas>
+
+    <script>
+      const circleCtx = document.getElementById('circleCanvas').getContext('2d');
+      circleCtx.beginPath();
+      circleCtx.arc(150, 100, 70, 0, 2 * Math.PI);
+      circleCtx.strokeStyle = 'lime';
+      circleCtx.lineWidth = 3;
+      circleCtx.stroke();
+    </script>
+    
+  </div>
+    </body>
+</html>

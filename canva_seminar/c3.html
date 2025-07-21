@@ -1,0 +1,25 @@
+<html>
+
+    <head>
+        <title>Shadows</title>
+    </head>
+
+    <body>
+    <div class="section">
+    <h2>Shadows</h2>
+    <canvas id="shadowCanvas" width="300" height="200"></canvas>
+
+    <script>
+      const shadowCtx = document.getElementById('shadowCanvas').getContext('2d');
+      shadowCtx.shadowColor = 'blue';
+      shadowCtx.shadowBlur = 15;
+      shadowCtx.shadowOffsetX = 10;
+      shadowCtx.shadowOffsetY = 10;
+
+      shadowCtx.fillStyle = 'orange';
+      shadowCtx.fillRect(50, 50, 150, 100);
+    </script>
+    
+  </div>
+    </body>
+</html>
