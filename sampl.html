@@ -1,0 +1,33 @@
+<!-- 5-compound-interest-rates.html -->
+<!doctype html>
+<html>
+<head><title>Compound Interest (vary rates)</title></head>
+<body>
+  <h3>Compound interest tables for rates</h3>
+  Principal: <input id="P5" value="1000" type="number"> 
+  Years: <input id="Y5" value="5" type="number">
+  Start%: <input id="Rstart5" value="3" type="number"> 
+  End%: <input id="Rend5" value="6" type="number"> 
+  Step%: <input id="Rstep5" value="1" type="number">
+  <button id="run5">Compute</button>
+  <div id="out5"></div>
+
+  <script>
+    document.getElementById('run5').onclick = function(){
+      const P = parseFloat(P5.value), Y = parseInt(Y5.value,10);
+      let rs = parseFloat(Rstart5.value), re = parseFloat(Rend5.value), step = parseFloat(Rstep5.value);
+      if(isNaN(P)||isNaN(Y)||isNaN(rs)||isNaN(re)||isNaN(step)||Y<1){ out5.innerText='Enter valid inputs'; return; }
+      let html='';
+      for(let r=rs; r<=re+1e-9; r+=step){
+        html += `<h4>Rate: ${r}%</h4><table border="1"><tr><th>Year</th><th>Amount</th></tr>`;
+        for(let y=1;y<=Y;y++){
+          const A = P * Math.pow(1 + r/100, y);
+          html += `<tr><td>${y}</td><td>${A.toFixed(2)}</td></tr>`;
+        }
+        html += '</table>';
+      }
+      out5.innerHTML = html;
+    };
+  </script>
+</body>
+</html>
